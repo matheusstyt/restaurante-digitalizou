@@ -1,0 +1,22 @@
+@import "@/styles/root.scss";
+body{
+    background-color: rgb(255, 250, 243);
+}
+nav {
+    display: none;
+}
+.container-geral{
+    background-color: $cor_primaria;
+    margin: 0 auto;
+    margin-top: 5vmax;
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .banner-entrar{
+        height: 100%;
+        aspect-ratio: 4/3;
+        border-right: 1px solid $cor_secundaria;
+    }
+}

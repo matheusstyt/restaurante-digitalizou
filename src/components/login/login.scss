@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 2em;
+    .input-field{
+
+        width: 100%;
+
+        p{
+            color: #fff;
+            text-align: left;
+            padding-bottom: 0.5em;
+        }
+        .input-box{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            background-color: #ffc9a0;
+            img{
+                height: 1em;
+                aspect-ratio: 1/1;
+                fill: #fff;
+                
+            }
+            input{
+                padding: 1em;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: #190b02cb;
+                &::placeholder{
+                    color: #190b02;
+                }
+            }
+        }
+    }
+}

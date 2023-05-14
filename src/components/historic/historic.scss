@@ -1,0 +1,27 @@
+@import "@/styles/root.scss";
+
+h2, h3, h4, p{
+    color: $cor_cinza;
+    font-family: $fonte_normal;
+}
+h3{
+    color : $fonte_bold;
+}
+aside{
+    border-left: 1px solid #ffef637e;
+    padding: 2vmax;
+    ul{
+        li{
+            padding: 1em;
+            border-radius: 0.5em;
+            background-color: rgba(253, 206, 151, 0.812); 
+            h3, p{
+                color: $cor_primaria;
+            }
+            p{
+                padding: 0.25em  0;
+                text-align: left;
+            }
+        }
+    }
+}

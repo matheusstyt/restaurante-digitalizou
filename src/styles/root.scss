@@ -1,0 +1,38 @@
+$cor_primaria : #190b02;
+$cor_secundaria : #eaa570;
+$cor_cinza : #d9d9d9;
+$cor_preto : #414141;
+// paleta de cores quentes
+$cor_1 : #d84d4d;
+$cor_2 : #f2a655;
+$cor_3 : #fdec2e;
+// fonte padrao
+$fonte_normal : GandhiSansRegular;
+$fonte_bold : GandhiSansBold;
+
+@font-face {
+    font-family: "GandhiSansRegular";
+    src:local("GandhiSansRegular"),
+    url("@/assets/fontes//GandhiSans-Regular.otf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "GandhiSansBold";
+    src:local("GandhiSansBold"),
+    url("@/assets/fontes//GandhiSans-Bold.otf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "GandhiSansRegular";
+}
+
+body{
+    background-color: $cor_primaria;
+    min-height: 100vh;
+}
