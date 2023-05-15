@@ -70,3 +70,17 @@ body{
 
   background-color: $cor_fundo; /* Cor de fundo da barra de rolagem */
 }
+
+// submit padrão
+input[type="submit"]{
+  padding: 1em;
+  color: #fff;
+  background-color: rgb(31, 116, 196);
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+} 
+th, td {
+
+  color: $cor_texto;
+}

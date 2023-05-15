@@ -58,6 +58,7 @@ export default {
 }
 </script>
 <style lang="scss">
+    @import "@/styles/root.scss";
     span{
         width: 100%;
         display: flex;
@@ -75,14 +76,6 @@ export default {
         }
         
     }
-    
-    input[type="submit"]{
-        padding: 1em;
-        color: #fff;
-        background-color: rgb(31, 116, 196);
-        border: none;
-        border-radius: 0.5em;
-        cursor: pointer;
-    }  
+     
     
 </style>

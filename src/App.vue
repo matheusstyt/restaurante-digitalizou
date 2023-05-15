@@ -1,8 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Painel </router-link> |
-    <router-link to="/refeicao">Cadastrar refeição</router-link> |
-    <router-link to="/painel">Administrativo</router-link> |
+    <router-link to="/refeicao">Refeições</router-link> |
+    <router-link to="/painel">Pedidos</router-link> |
 
     <router-link to="/logout">Sair da conta</router-link> |
   </nav>

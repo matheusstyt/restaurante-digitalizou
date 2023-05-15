@@ -5,6 +5,8 @@
             <img v-if="src" class="ico-input" :src="src">
             <input
             min="0"
+            step="0.01"
+            
             :required="required" 
             spellcheck="false" 
             :type="type" 

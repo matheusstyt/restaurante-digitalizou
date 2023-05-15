@@ -13,6 +13,13 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "entrar" */ '../views/EntrarPage.vue')
     }
+  },
+  {
+    path: '/refeicao',
+    name: 'refeicao',
+    component: function () {
+      return import(/* webpackChunkName: "refeicao" */ '../views/RefeicaoPage.vue')
+    }
   }
 ]
 
