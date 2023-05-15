@@ -4,11 +4,15 @@
   margin: 0;
   padding: 0;
 }
-  p, h3, h4{
-    color : $cor_primaria;
+  p{
+    color: $cor_primaria;
+  }
+  h3, h4{
+    color : $cor_texto;
   }
   .container-table{
     width:80vw;
+    overflow-y: auto;
     ul{
       width : 90%;
       margin: 0 auto;
@@ -26,12 +30,16 @@
         border-radius : 1em;
         padding: 1em;
         box-sizing : border-box;
-        background-color : #f8dfbf;
+        background-color : $cor_mesa;
         display: flex;
         flex-direction : column;
         justify-content : space-around;
+        opacity: 0.7;
         align-items : center;
-        border: 4px solid #f68080;
+        border: 4px solid transparent;
+        &:hover{
+          opacity: 1;
+        }
         p{
           padding : 1vmax;
           font-size : 4vmax;
@@ -62,4 +70,6 @@
       }
     }
   }
-  
+  .isEmpty{
+    color: #d8ffbe;
+  }

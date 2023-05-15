@@ -1,11 +1,12 @@
 <template>
   <main class='container-table'>
+      <Modal v-if="isModal" :table="table_now" @close_modal="close_modal"></Modal>
       <ul>
-        <template v-for="(table, index) in tables_local">
+        <template v-for="(table, index) in tables">
           <template v-if="table.isEmpty">
-            <li :key="table.id" class="table-card" :style="`{ backgroundColor : ${ table.color_status }`">
+            <li :key="table.id" class="table-card" :style="`{ backgroundColor : ${ table.color_status }`" @click="open_modal_empy(table)">
               <p> {{table.number}}</p>
-              <h3>Desocupado</h3>
+              <h3 class="isEmpty">Desocupado</h3>
             </li>
             
           </template>
@@ -30,20 +31,33 @@
 </template>
 <script>
   import "./tables.scss";
+  import Modal from "./modal"
   export default {
+    components : {
+      Modal
+    },
       props : {
         tables : Array
       },
-      mounted () {
-        console.log(this.tables)
+      created () {
+
         this.tables_local = this.tables;
       },
       data() {
         return{
-          tables_local : []
+          isModal : false,
+          tables_local : [],
+          table_now : null
         }
       },
       methods : {
+        close_modal (value){
+          this.isModal = value
+        },
+        open_modal_empy(table){
+          this.table_now = table;
+          this.isModal = true;
+        },
         alterar_status () {
           this.$emit('update_status')
         },

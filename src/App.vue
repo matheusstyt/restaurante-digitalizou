@@ -20,16 +20,17 @@
 }
 
 nav {
-  background-color: $cor_secundaria;
-  padding: 30px;
-
+  background-color: $cor_cabecalho;
+  padding: 0.5em;
+  color: #666666;
+    box-shadow: 2px 0px 19px rgba(0, 0, 0, 0.735);
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #b8b7b7;
     text-decoration: none;
 
     &.router-link-exact-active {
-      color: $cor_primaria;
+      color: #fff;
     }
   }
 }

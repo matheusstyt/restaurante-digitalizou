@@ -2,105 +2,105 @@
     "tables" : [
         {
           "id" : 1,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 1,
             "cliente" : {}
         },
     
         {
           "id" : 2,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 2,
             "cliente" : {}
         },
     
         {
           "id" : 3,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 3,
             "cliente" : {}
         },
     
         {
           "id" : 4,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 4,
             "cliente" : {}
         },
     
         {
           "id" : 5,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 5,
             "cliente" : {}
         },
     
         {
           "id" : 6,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 6,
             "cliente" : {}
         },
     
         {
           "id" : 7,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 7,
             "cliente" : {}
         },
     
         {
           "id" : 8,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 8,
             "cliente" : {}
         },
     
         {
           "id" : 9,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 9,
             "cliente" : {}
         },
     
         {
           "id" : 10,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 10,
             "cliente" : {}
         },
     
         {
           "id" : 11,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 11,
             "cliente" : {}
         },
     
         {
           "id" : 12,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 12,
             "cliente" : {}
         },
     
         {
           "id" : 13,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 13,
             "cliente" : {}
         },
     
         {
           "id" : 14,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 14,
             "cliente" : {}
         },
     
         {
           "id" : 15,
-          "isEmpty" : false,
+          "isEmpty" : true,
           "number" : 15
         }
     

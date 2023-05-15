@@ -1,11 +1,21 @@
-$cor_primaria : #190b02;
-$cor_secundaria : #eaa570;
+$cor_cabecalho : #242424e3;
+$cor_primaria : rgba(42, 42, 42, 0.996);
+$cor_terciaria : #252525;
+
+$cor_texto : #d7d4d4;
+
+$cor_mesa : hsla(26, 3%, 45%, 0.919);
+$cor_pedidos : rgba(24, 24, 24, 0.919);
 $cor_cinza : #d9d9d9;
-$cor_preto : #414141;
+$cor_preto : #232323;
 // paleta de cores quentes
 $cor_1 : #d84d4d;
-$cor_2 : #f2a655;
+$cor_2 : #FFA500;
 $cor_3 : #fdec2e;
+
+// paleta do scroll
+$cor_barra : #000000e8;
+$cor_fundo : #b5b5b5;
 // fonte padrao
 $fonte_normal : GandhiSansRegular;
 $fonte_bold : GandhiSansBold;
@@ -31,8 +41,32 @@ $fonte_bold : GandhiSansBold;
     padding: 0;
     font-family: "GandhiSansRegular";
 }
-
+li{
+    list-style: none;
+}
 body{
-    background-color: $cor_primaria;
+    background: linear-gradient(to right, $cor_terciaria 0%, $cor_primaria);
+
     min-height: 100vh;
+}
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+  cursor: pointer;
+  outline: none;
+}
+
+/* Estilizando o indicador da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: $cor_barra; /* Cor da barra de rolagem */
+  border-radius: 5px;
+  
+
+}
+
+/* Estilizando a área de fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+
+  background-color: $cor_fundo; /* Cor de fundo da barra de rolagem */
 }

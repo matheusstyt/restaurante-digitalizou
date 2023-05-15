@@ -1,6 +1,5 @@
 <template>
     <form >
-        <Field ></Field>
         
         <div class="input-field">
             <p >Email:</p>
@@ -34,3 +33,39 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+    .input-field{
+    width: 100%;
+    padding: 0.5em 0;
+    p{
+        color: #fff;
+        text-align: left;
+        padding-bottom: 0.5em;
+    }
+    .input-box{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffc9a0;
+        box-sizing: border-box;
+        padding-left: 1em;
+        .ico-input{
+            padding-left: 1em;
+            height: 1em;
+            aspect-ratio: 1/1;
+        }
+        input{
+            width: 90%;
+            padding-left: 1em;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #190b02cb;
+            &::placeholder{
+                color: #190b02;
+            }
+        }
+    }
+}
+</style>

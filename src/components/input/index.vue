@@ -2,21 +2,44 @@
     <div class="input-field">
         <p>{{label}}:</p>
         <div class="input-box">
-            <img class="ico-input" :src="src">
-            <input spellcheck="false" type="text" placeholder="Insira o {{label}}" v-model="text_input_local">
+            <img v-if="src" class="ico-input" :src="src">
+            <input
+            min="0"
+            :required="required" 
+            spellcheck="false" 
+            :type="type" 
+            :placeholder="placeholder" 
+            v-model="text_input_local">
         </div>
     </div>
 </template>
 <script>
 import "./input.scss";
 export default {
-    props : {
-        label : String,
-        text_input : String,
-        src : String
+    props: {
+        label: String,
+        text_input: String,
+        src: {
+            type: String,
+            default: null
+        },
+        type: {
+            type: String,
+            default: "text"
+        },
+        required: {
+            type: Boolean,
+            default: false
+        },
+        placeholder: {
+            type: String,
+            default: "Escreva.."
+        }
     },
     data () {
-        text_input_local : ""
+        return {
+            text_input_local : ""
+        }
     },
     mounted () {
         console.log(this.label)
