@@ -1,6 +1,11 @@
 <template>
   <main class='container-table'>
       <Modal v-if="isModal" :table="table_now" @close_modal="close_modal"></Modal>
+      <div class="table-title">
+        <h2>Mapa de Mesas</h2>
+        <h2>Horário : {{ now }}</h2>
+      </div>
+      
       <ul>
         <template v-for="(table, index) in tables">
           <template v-if="table.isEmpty">
@@ -40,14 +45,35 @@
         tables : Array
       },
       created () {
-
         this.tables_local = this.tables;
+      },
+      mounted () {
+        function horario_formatado() {
+          const now = new Date();
+          const day = now.getDate().toString().padStart(2, '0');
+          const month = (now.getMonth() + 1).toString().padStart(2, '0');
+          const year = now.getFullYear();
+          const hours = now.getHours().toString().padStart(2, '0');
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+
+          const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+          return formattedDate;
+        }
+
+        const now = horario_formatado();
+
+        this.now = now;
+        setTimeout(() => {
+          this.now = now;
+
+        }, 60000);
       },
       data() {
         return{
           isModal : false,
           tables_local : [],
-          table_now : null
+          table_now : null,
+          now : ""
         }
       },
       methods : {

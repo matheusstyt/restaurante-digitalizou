@@ -7,8 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@infectoone/vue-ganttastic": "^2.1.4",
     "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.2.13",
+    "vue-gantt-chart": "^1.0.11",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {

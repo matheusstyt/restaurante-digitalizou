@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/PainelPage.vue'
+import HomeView from '../views/MapaPage.vue'
 
 const routes = [
   {
@@ -19,6 +19,20 @@ const routes = [
     name: 'refeicao',
     component: function () {
       return import(/* webpackChunkName: "refeicao" */ '../views/RefeicaoPage.vue')
+    }
+  },
+  {
+    path: '/reservas',
+    name: 'reservas',
+    component: function () {
+      return import(/* webpackChunkName: "reservas" */ '../views/ReservasPage.vue')
+    }
+  },
+  {
+    path: '/pedidos',
+    name: 'pedidos',
+    component: function () {
+      return import(/* webpackChunkName: "pedidos" */ '../views/PedidosPage.vue')
     }
   }
 ]

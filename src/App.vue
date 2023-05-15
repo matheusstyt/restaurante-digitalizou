@@ -1,10 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Painel </router-link> |
+    <router-link to="/">Mapa de Ocupação </router-link> |
     <router-link to="/refeicao">Refeições</router-link> |
-    <router-link to="/painel">Pedidos</router-link> |
-
-    <router-link to="/logout">Sair da conta</router-link> |
+    <router-link to="/reservas">Reservas - Gantt</router-link> |
+    <router-link to="/pedidos">Pedidos</router-link> |
+    <router-link to="/">Sair da conta</router-link> 
   </nav>
   <router-view/>
 </template>
