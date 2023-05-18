@@ -31,7 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-table{
-    margin: 0 auto;
-}
+    @import "./table.scss";
 </style>

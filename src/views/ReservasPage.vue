@@ -9,9 +9,11 @@
             </div>
         </div>
         <template v-if="isGantt">
+            <h2>Gráfico de Gantt</h2>
             <Gantt />
         </template>
         <template v-else>
+            <h2>Tabela de Reservas</h2>
             <Table>
             </Table>
         </template>
@@ -19,9 +21,10 @@
     </div>
 </template>
 <script>
-
+import axios from 'axios'
+import { get_reservas } from '@/api/reserva';
 import Gantt from "@/components/gantt";
-import Modal from "@/components/tables/modal";
+import Modal from "@/components/modal";
 import Table from "@/components/table_requests";
 export default {
     components : {
@@ -29,6 +32,9 @@ export default {
     },
     data (){
         return{
+            HOST : require('@/config/env').HOST,
+            PORT : require('@/config/env').PORT,
+            lista_reservas : [],
             isModal : false,
             isGantt : true
         }
@@ -40,16 +46,28 @@ export default {
         open_modal(){
             this.isModal = true;
         }
+    },
+    mounted (){
+        get_reservas()
+        .then( data => {
+            this.lista_reservas = data;
+            console.log(this.lista_reservas)
+        })
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/styles/root.scss";
+h2{
+    color: $cor_texto;
+    padding-bottom: 0.5em;
+}
 .content-gantt{
     margin-top: 1em;
     height: 90vh;
     overflow-y:auto;
-}
+}  
+
 .options{
     padding: 1em 4em;
     box-sizing: border-box;

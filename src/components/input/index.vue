@@ -44,9 +44,6 @@ export default {
         }
     },
     mounted () {
-        console.log(this.label)
-        console.log(this.text_input)
-        console.log(this.src)
     },  
     watch : {
         text_input_local ( value ) { 

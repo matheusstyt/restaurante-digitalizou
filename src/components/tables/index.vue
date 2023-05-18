@@ -36,7 +36,7 @@
 </template>
 <script>
   import "./tables.scss";
-  import Modal from "./modal"
+  import Modal from "@/components/modal"
   export default {
     components : {
       Modal

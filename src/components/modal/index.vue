@@ -3,25 +3,23 @@
         <div class="container-table-add">
             <button @click="close">x</button>
             <span>
-                <h4>Reservar  {{ table_now }}</h4>
-            </span>
-            
-            <form>
-                <select name="tables" id="cb-tables">
+                <h4>Reservar  {{ mesa }}</h4>
+            </span>  
+            <form @submit="enviar_reserva">
+                <select name="tables" id="cb-tables" v-model="mesa">
                     <option value="">Escolha uma mesa.</option>
                     <template v-for="(item, index) in list_table" :key="index">
-                        <option :value="item.label">{{ item.label }}</option>
+                        <option :value="item.table_id">Mesa {{ item.table_id }}</option>
                     </template>
                 </select>
                
                 <Field
                     label="Nome do Cliente"
-                    :text_input="cliente"
+                    :text_input="cliente_name"
                     :required="true"
+                    @new_value="update_cliente"
                 ></Field>
-
-                
-                <div class="form-field">
+                <!-- <div class="form-field">
                     <Field
                         label="Qual Refeição?"
                         :text_input="cliente"
@@ -34,7 +32,7 @@
                         placeholder="Quantidade"
                         type="number"
                     ></Field>
-                </div>
+                </div> -->
                 <div class="form-field">
                     <div class="input-field">
                         <p>Horário de entrada:</p>
@@ -42,7 +40,7 @@
                     </div>
                     <div class="input-field">
                         <p>Quantas horas?</p>
-                        <input type="time" v-model="tempo_reserva"/>
+                        <input type="time" v-model="tempo"/>
                     </div>
                 </div>
                 
@@ -54,8 +52,9 @@
 </template>
 <script>
 import "./modal.scss";
-import Field from "@/components/input"
-
+import Field from "@/components/input";
+import { post_reserva } from '@/api/reserva';
+import { rows_list_table } from "@/json/list_table.json";
 
 export default {
     props : {
@@ -66,77 +65,36 @@ export default {
     },
     data () {
         return {
-            table_now : "Mesa 01",
-            number_mesa : 0,
-            refeicao : "",
-            cliente : "",
+            mesa : "",
+            cliente_name : "",
             horario_entrada : this.horario_formatado(new Date()),
-            tempo_reserva : "01:00",
-            list_table : [
-                {
-                    number : 1,
-                    label : "Mesa 01"
-                },
-                {
-                    number : 2,
-                    label : "Mesa 02"
-                },
-                {
-                    number : 3,
-                    label : "Mesa 03"
-                },
-                {
-                    number : 4,
-                    label : "Mesa 04"
-                },
-                {
-                    number : 5,
-                    label : "Mesa 05"
-                },
-                {
-                    number : 6,
-                    label : "Mesa 06"
-                },
-                {
-                    number : 7,
-                    label : "Mesa 07"
-                },
-                {
-                    number : 8,
-                    label : "Mesa 08"
-                },
-                {
-                    number : 9,
-                    label : "Mesa 09"
-                },
-                {
-                    number : 10,
-                    label : "Mesa 10"
-                },
-                {
-                    number : 11,
-                    label : "Mesa 11"
-                },
-                {
-                    number : 12,
-                    label : "Mesa 12"
-                },
-                {
-                    number : 13,
-                    label : "Mesa 13"
-                },
-                {
-                    number : 14,
-                    label : "Mesa 14"
-                },
-                {
-                    number : 15,
-                    label : "Mesa 15"
-                },
-            ]
+            tempo : "01:00",
+            list_table : rows_list_table
         }
     },
     methods : {
+        update_cliente(value){
+            this.cliente_name = value;
+        },
+        enviar_reserva(e){
+            
+            const body_reserva = {
+                mesa : this.mesa,
+                cliente_name : this.cliente_name,
+                horario_entrada: this.horario_entrada,
+                tempo: this.tempo
+            }
+            console.table(body_reserva);
+            post_reserva(body_reserva)
+            .then( data => {
+                console.log(data);
+            })
+            .catch( error => {
+
+            })
+            e.preventDefault();
+            
+        },
         close(){
             this.$emit("close_modal", false);
         },

@@ -1,0 +1,20 @@
+table{
+    background-color: rgb(48, 48, 48);
+    border: 1px dashed #e6e6e66d;
+    margin: 0 auto;
+}
+th{
+    background-color: rgba(23, 23, 23, 0.459);
+}
+tr, thead{
+    opacity: 0.8;
+    &:hover{
+        opacity: 1;
+    }
+}
+tr:nth-child(odd){
+    background-color: rgba(23, 23, 23, 0.459);
+}
+th, td{
+    padding: 1em;
+}
