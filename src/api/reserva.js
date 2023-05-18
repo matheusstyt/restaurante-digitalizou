@@ -22,3 +22,13 @@ export function post_reserva(body_reserva){
         return msg;
     })
 }
+export function delete_reserva(id){
+    return axios.delete(`${HOST}:${PORT}/reserva/${id}`)
+    .then( res => {
+        return res.data;
+    })
+    .catch( error => {
+ 
+        return null;
+    })
+}
