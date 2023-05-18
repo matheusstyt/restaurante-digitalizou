@@ -2,6 +2,7 @@
     <div class="modal-table">
         <div class="container-table-add">
             <button @click="close">x</button>
+            <h3 v-if="isExists">{{ msg }}</h3>
             <span>
                 <h4>Reservar  {{ mesa }}</h4>
             </span>  
@@ -43,8 +44,6 @@
                         <input type="time" v-model="tempo"/>
                     </div>
                 </div>
-                
-
                 <input type="submit" value="Reservar">
             </form>
         </div>
@@ -65,7 +64,9 @@ export default {
     },
     data () {
         return {
-            mesa : "",
+            isExists : false,
+            msg : "",
+            mesa : "01",
             cliente_name : "",
             horario_entrada : this.horario_formatado(new Date()),
             tempo : "01:00",
@@ -73,6 +74,9 @@ export default {
         }
     },
     methods : {
+        isObject(variable) {
+            return Object.prototype.toString.call(variable) === '[object Object]';
+        },
         update_cliente(value){
             this.cliente_name = value;
         },
@@ -84,14 +88,21 @@ export default {
                 horario_entrada: this.horario_entrada,
                 tempo: this.tempo
             }
-            console.table(body_reserva);
             post_reserva(body_reserva)
             .then( data => {
-                console.log(data);
+                //basicamente ele verifica se ata é objeto, se sim eu sei que post foi sucesso
+                this.isExists = !this.isObject(data);
+                
+                if(this.isObject(data)){
+                    this.isExists = false;
+                    window.location.reload()
+                }else{
+                    // caso contrárrio, eu sei que é a mensagem de erro do back-end
+                    this.msg = data
+                    this.isExists = true;
+                }
             })
-            .catch( error => {
 
-            })
             e.preventDefault();
             
         },

@@ -46,8 +46,8 @@
             // então o gráfico de gantt vai exibir desde 17h para melhor visualização
             // lembrando que isso é a escala de exibição do gantt em horas do dia
             get_hour_start(){
-                // 24h - 18h
-                const horario_funcionamento = "6:00";
+                // visualização do gantt das 17:00 á 1:00
+                const horario_funcionamento = "8:00";
                 const date = new Date();
                 const year = date.getFullYear();
                 const month = String(date.getMonth() + 1).padStart(2, '0');

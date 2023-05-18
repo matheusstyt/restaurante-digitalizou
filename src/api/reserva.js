@@ -18,6 +18,7 @@ export function post_reserva(body_reserva){
         return res.data;
     })
     .catch( error => {
-        return null;
+        var [msg] = error.response.data.message;
+        return msg;
     })
 }
