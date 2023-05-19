@@ -1,6 +1,7 @@
-$cor_cabecalho : #242424e3;
-$cor_primaria : rgba(42, 42, 42, 0.996);
-$cor_terciaria : #252525;
+$cor_cabecalho_1 : rgba(5, 6, 38, 0.996);
+$cor_cabecalho_2 : #242424e3;
+$cor_primaria : rgba(5, 6, 38, 0.996);
+$cor_terciaria : #152130;
 
 $cor_texto : #d7d4d4;
 
@@ -14,8 +15,8 @@ $cor_2 : #FFA500;
 $cor_3 : #fdec2e;
 
 // paleta do scroll
-$cor_barra : #000000e8;
-$cor_fundo : #b5b5b5;
+$cor_barra : #184e81e8;
+$cor_fundo : #9eace4;
 // fonte padrao
 $fonte_normal : GandhiSansRegular;
 $fonte_bold : GandhiSansBold;
@@ -83,4 +84,8 @@ input[type="submit"]{
 th, td {
 
   color: $cor_texto;
+}
+table{
+  border: 1px dashed #e6e6e66d;
+  margin: 0 auto;
 }

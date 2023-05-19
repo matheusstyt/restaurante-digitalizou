@@ -83,7 +83,6 @@ export default {
             this.reserva_atual = reserva;
         },
         deletar(id){
-            alert(id)
             delete_reserva(id)
             .then( data => {
                 if(data != null){

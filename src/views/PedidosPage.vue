@@ -34,6 +34,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.content-pedidos{
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    th, td{
+        padding: 1em;
+    }
+}
 </style>

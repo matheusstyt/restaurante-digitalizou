@@ -4,7 +4,9 @@
     justify-content: space-evenly;
     align-items: flex-start;
     max-height: 90vh;
+    max-width: 90vw;
     overflow-y: auto;
+    margin: 0 auto;
 }
 form{
     border: 1px solid #e6e6e66d;
@@ -12,10 +14,6 @@ form{
     border-radius: 1em;
     position: sticky;
     top: 0;
-}
-table{
-    background-color: rgb(48, 48, 48);
-    border: 1px dashed #e6e6e66d;
 }
 th{
     background-color: rgba(23, 23, 23, 0.459);

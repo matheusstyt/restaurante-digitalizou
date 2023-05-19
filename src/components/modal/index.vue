@@ -57,7 +57,11 @@ import { rows_list_table } from "@/json/list_table.json";
 
 export default {
     props : {
-        table : Object
+        table_number : {
+            type: String,
+            default: '01',
+            required:false
+        }
     },
     components : {
         Field
@@ -66,7 +70,7 @@ export default {
         return {
             isExists : false,
             msg : "",
-            mesa : "01",
+            mesa : "",
             cliente_name : "",
             horario_entrada : this.horario_formatado(new Date()),
             tempo : "01:00",
@@ -120,7 +124,7 @@ export default {
         },
     },
     mounted (){
-
+        this.mesa = this.table_number;
     }
 }
 </script>

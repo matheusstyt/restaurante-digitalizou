@@ -2,8 +2,8 @@ import axios from 'axios';
 const HOST = require("@/config/env").HOST;
 const PORT = require("@/config/env").PORT;
 
-export function get_reservas(){
-    return axios.get(`${HOST}:${PORT}/reserva`)
+export async function get_reservas(){
+    return await axios.get(`${HOST}:${PORT}/reserva`)
     .then( res => {
         return res.data;
     })
@@ -28,7 +28,6 @@ export function delete_reserva(id){
         return res.data;
     })
     .catch( error => {
- 
         return null;
     })
 }

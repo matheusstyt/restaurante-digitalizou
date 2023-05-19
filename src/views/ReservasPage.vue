@@ -9,11 +9,11 @@
             </div>
         </div>
         <template v-if="isGantt">
-            <h2>Gráfico de Gantt</h2>
+            <h2>Gráfico de Gantt - Reservas</h2>
             <Gantt />
         </template>
         <template v-else>
-            <h2>Tabela de Reservas</h2>
+            <h2>Tabela - Reservas</h2>
             <Table>
             </Table>
         </template>

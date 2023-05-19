@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import Tables from "@/components/tables";
+import Tables from "@/components/table_map";
 import Historic from "@/components/historic";
-import tables_json from "@/assets/json/tables.json"
+import tables_json from "@/json/map_table.json"
 export default {
   name: 'HomeView',
   components: {
@@ -32,9 +32,12 @@ export default {
       tables_list : Array
     }
   },
+  methods: {
+    
+  },
   mounted() {
     this.tables_list = tables_json.tables;
-    console.log(this.tables_list)
+
   }
 }
 </script>
