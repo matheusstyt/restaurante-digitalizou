@@ -19,6 +19,8 @@
 
 </template>
 <script>
+  import { formatar_data, parse_tempo, horario_formatado } from "@/api/time";
+
     import { rows_list_table } from '@/json/list_table.json';
     import { get_reservas} from '@/api/reserva';
     import { ref } from "vue"
@@ -35,13 +37,6 @@
             }
         },
         methods : {
-            parse_tempo(tempo) {
-                const partesTempo = tempo.split(':');
-                const horas = parseInt(partesTempo[0], 10);
-                const minutos = parseInt(partesTempo[1], 10);
-
-                return (horas * 60 + minutos) * 60 * 1000;
-            },
             // já que o funcionamento do estabelecimento é 18h, 
             // então o gráfico de gantt vai exibir desde 17h para melhor visualização
             // lembrando que isso é a escala de exibição do gantt em horas do dia
@@ -59,19 +54,8 @@
             get_hour_end(horario_funcionamento){
                 const today = new Date(this.chart_start);
                 // atribui a data de hoje e a hora final de exibição em 17h + tempo escolhido
-                this.chart_end = `${ this.formatar_data(new Date( today.getTime() + this.parse_tempo(horario_funcionamento)) )  }`;
+                this.chart_end = `${ formatar_data(new Date( today.getTime() + parse_tempo(horario_funcionamento)) )  }`;
             },
-            // fim da escala
-            // gantt recebe apenas yyyy-mm-dd h:m
-            formatar_data(date) {
-                const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const day = String(date.getDate()).padStart(2, '0');
-                const hours = String(date.getHours()).padStart(2, '0');
-                const minutes = String(date.getMinutes()).padStart(2, '0');
-
-                return `${year}-${month}-${day} ${hours}:${minutes}`;
-            }
         },
         mounted (){
             this.get_hour_start();
@@ -84,11 +68,11 @@
                             // converter string em data e pegar horario de saída
                             const horario_entrada = new Date(reserva.horario_entrada);
                             const horario_saida = new Date(
-                            horario_entrada.getTime() + this.parse_tempo(reserva.tempo),
+                            horario_entrada.getTime() + parse_tempo(reserva.tempo),
                             );
                             mesa.requests.push({
-                                myBeginDate: this.formatar_data(horario_entrada),
-                                myEndDate: this.formatar_data(horario_saida),
+                                myBeginDate: formatar_data(horario_entrada),
+                                myEndDate: formatar_data(horario_saida),
                                 ganttBarConfig: {
                                     id:reserva.id,
                                     label: reserva.cliente_name

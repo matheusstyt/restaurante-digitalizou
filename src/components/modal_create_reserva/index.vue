@@ -50,6 +50,7 @@
     </div>
 </template>
 <script>
+import { formatar_data, parse_tempo, horario_formatado } from "@/api/time";
 import "./modal.scss";
 import Field from "@/components/input";
 import { post_reserva } from '@/api/reserva';
@@ -72,7 +73,7 @@ export default {
             msg : "",
             mesa : "",
             cliente_name : "",
-            horario_entrada : this.horario_formatado(new Date()),
+            horario_entrada : formatar_data(new Date()),
             tempo : "01:00",
             list_table : rows_list_table
         }
@@ -112,15 +113,6 @@ export default {
         },
         close(){
             this.$emit("close_modal", false);
-        },
-        horario_formatado(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-            
-            return `${year}-${month}-${day}T${hours}:${minutes}`;
         },
     },
     mounted (){
