@@ -30,6 +30,10 @@
 <script>
 export default {
     components : {
+    },
+    mounted(){
+        // se não houver usuário no sessionLocal, então ele retorna para página de entrar
+        !sessionStorage.getItem('user_id') && window.location.replace("/entrar");
     }
 }
 </script>

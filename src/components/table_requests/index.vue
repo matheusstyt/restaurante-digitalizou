@@ -1,38 +1,7 @@
 <template>
     
-        <template v-if="modal_deletar">
-            <div class="modal">
-                <div class="container-delete-reserva">
-                    <h3>Deletar reserva do sistema?</h3>
-                    <ul>
-                        <li>
-                            <p>ID : </p>
-                            <p>{{ reserva_atual.id }}</p>
-                        </li>
-                        <li>
-                            <p>Mesa : </p>
-                            <p>{{ reserva_atual.mesa }}</p>
-                        </li>
-                        <li>
-                            <p>Cliente : </p>
-                            <p>{{ reserva_atual.cliente_name }}</p>
-                        </li>
-                        <li>
-                            <p>Horário de Entrada : </p>
-                            <p>{{ reserva_atual.horario_entrada }}</p>
-                        </li>
-                        <li>
-                            <p>Tempo no lugar : </p>
-                            <p>{{ reserva_atual.tempo }}</p>
-                        </li>
-                    </ul>
-                    <button @click="deletar(reserva_atual.id)">Deletar</button>
-                </div>
-            </div>
-        </template>
+    <ModalRequest v-if="modal_deletar"  :reserva_atual="reserva_atual" @close_modal_delete="close_modal_delete"></ModalRequest>
         
-   
-    
     <table>
         <thead>
             <th>ID</th>
@@ -57,8 +26,14 @@
     </table>
 </template>
 <script>
+
+import ModalRequest from '@/components/modal_delete_reserva';
 import { get_reservas, delete_reserva } from '@/api/reserva';
+
 export default {
+    components:{
+        ModalRequest
+    },
     data(){
         return{
             modal_deletar : false,
@@ -78,6 +53,9 @@ export default {
             });  
     },
     methods : {
+        close_modal_delete(value){
+          this.modal_deletar = value;
+        },
         delete_modal(reserva){
             this.modal_deletar = true;
             this.reserva_atual = reserva;

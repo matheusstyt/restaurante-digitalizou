@@ -29,15 +29,15 @@ export default {
         }
       ],
 
-      tables_list : Array
+      tables_list : tables_json.tables
     }
   },
   methods: {
     
   },
-  mounted() {
-    this.tables_list = tables_json.tables;
-
+  created() {
+    // se não houver usuário no sessionLocal, então ele retorna para página de entrar
+    !sessionStorage.getItem('user_id') && window.location.replace("/entrar");
   }
 }
 </script>

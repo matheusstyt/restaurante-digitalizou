@@ -1,6 +1,8 @@
 <template>
   <main class='container-table'>
-      <Modal v-if="isModal" :table_number="table_now" @close_modal="close_modal"></Modal>
+      <ModalRequest v-if="modal_deletar"  :reserva_atual="reserva_atual" @close_modal_delete="close_modal_delete"></ModalRequest>
+
+      <Modal v-if="modal_create" :table_number="table_now" @close_modal="close_modal"></Modal>
       <div class="table-title">
         <h2>Mapa de Mesas</h2>
         <h2>Horário : {{ now }}</h2>
@@ -23,7 +25,7 @@
             <h4>Horário entrada: {{table.data.horario_entrada}}</h4>
             <div class="content-button">
               <!-- <button @click="liberar_mesa(table.id)"> Liberar Mesa</button> -->
-              <button @click="alterar_status(table.status)">Desocupar</button>
+              <button @click="desocupar(table.status)">Desocupar</button>
             </div>
             
           </li>
@@ -37,10 +39,13 @@
   import { get_reservas } from "@/api/reserva";
   import { rows_list_table } from "@/json/list_table.json"
   import "./tables.scss";
-  import Modal from "@/components/modal"
+  import Modal from "@/components/modal_create_reserva"
+  import ModalRequest from '@/components/modal_delete_reserva';
+
+
   export default {
     components : {
-      Modal
+      Modal, ModalRequest
     },
       mounted () {
         this.list_table = rows_list_table;
@@ -67,7 +72,8 @@
       data() {
         return{
           list_table : null,
-          isModal : false,
+          modal_deletar : false,
+          modal_create : false,
           tables_local : [],
           table_now : null,
           now : "",
@@ -76,6 +82,9 @@
         }
       },
       methods : {
+        close_modal_delete(value){
+          this.modal_deletar = value;
+        },
         formatar_data(date) {
           const year = date.getFullYear();
           const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -120,11 +129,11 @@
           console.log(this.list_table)
         }, 
         close_modal (value){
-          this.isModal = value
+          this.modal_create = value
         },
         open_modal_empy(table){
           this.table_now = table.table_id;
-          this.isModal = true;
+          this.modal_create = true;
         },
         alterar_status () {
           this.$emit('update_status')

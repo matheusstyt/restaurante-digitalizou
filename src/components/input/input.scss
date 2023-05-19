@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #e6d6ca;
+        background-color: #cacae6;
         box-sizing: border-box;
         padding: 0.5em 0;
         border-radius: 0.5em;
@@ -22,7 +22,7 @@
             aspect-ratio: 1/1;
         }
         input{
-            width: 90%;
+            width: 70%;
             padding-left: 1em;
             background-color: transparent;
             border: none;
@@ -32,5 +32,6 @@
                 color: #190b02;
             }
         }
+        
     }
 }

@@ -24,7 +24,7 @@
 import axios from 'axios'
 import { get_reservas } from '@/api/reserva';
 import Gantt from "@/components/gantt";
-import Modal from "@/components/modal";
+import Modal from "@/components/modal_create_reserva";
 import Table from "@/components/table_requests";
 export default {
     components : {
@@ -48,6 +48,8 @@ export default {
         }
     },
     mounted (){
+        // se não houver usuário no sessionLocal, então ele retorna para página de entrar
+        !sessionStorage.getItem('user_id') && window.location.replace("/entrar");
         get_reservas()
         .then( data => {
             this.lista_reservas = data;

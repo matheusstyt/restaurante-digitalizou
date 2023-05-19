@@ -5,10 +5,19 @@ body{
 nav {
     display: none;
 }
+h2{
+    color: $cor_texto;
+    border-bottom: 1px solid #ebebeb96;
+}
+input:-internal-autofill-selected {
+    background-color: transparent;
+}
 .container-geral{
-    background-color: $cor_primaria;
+    padding: 2em;
+    background-color: $cor_entrar_painel;
     margin: 0 auto;
     margin-top: 5vmax;
+    border-radius: 1em;
     width: 70vw;
     height: 60vh;
     display: flex;
@@ -19,4 +28,59 @@ nav {
         aspect-ratio: 4/3;
         border-right: 1px solid $cor_cabecalho_1;
     }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 2em;
+    h3{
+        padding: 1em 0;
+    }
+    .input-field{
+
+        width: 100%;
+
+        p{
+            color: #fff;
+            text-align: left;
+            padding-bottom: 0.5em;
+        }
+        .input-box{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 1em;
+            background-color: #ccd8f6;
+            img{
+                height: 1em;
+                aspect-ratio: 1/1;
+                fill: #fff;
+                
+            }
+            input{
+                padding: 1em;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: #190b02cb;
+                &::placeholder{
+                    color: #190b02;
+                }
+            }
+            
+        }
+    }
+}
+#form-singup{
+    border-right: 1px solid #ffffff78;
+}
+input[type="submit"]{
+    margin: 1em 0;
+    background-color: rgb(32, 32, 146);
 }

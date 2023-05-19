@@ -1,19 +1,17 @@
 <template>
     <div class="container-geral">
-        <img class="banner-entrar" src="@/assets/banner-entrar.png" alt="">
+        <singup />
         <login />
-        
-        
     </div>
 </template>
 <script>
-import "@/styles/entrar.scss"
+
 import login from '../components/login';
-import singin from '../components/sing';
+import singup from '../components/singup';
 export default {
     components : {
         login,
-        singin
+        singup
     },
     data() {
         return {
@@ -25,6 +23,6 @@ export default {
 }
 
 </script>
-<style>
-
+<style lang="scss">
+@import "@/styles/entrar.scss"
 </style>

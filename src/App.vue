@@ -4,7 +4,7 @@
     <router-link to="/reservas">Reservas</router-link> |
     <router-link to="/refeicao" >Refeições</router-link> |
     <router-link to="/pedidos">Pedidos</router-link> |
-    <router-link to="/">Sair da conta</router-link> 
+    <router-link to="/">Sair da conta</router-link> |
   </nav>
   <router-view/>
 </template>
