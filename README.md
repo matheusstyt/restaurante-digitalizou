@@ -22,7 +22,7 @@ npm run build
 ![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/33bd8e2d-d75f-49a6-ab35-f505d860f2cc)
 
 ### Grafíco de Gantt
-![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/bba6b85f-fcbb-4bc2-aacb-6763f3cf10cb)
+![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/c2a7e62d-7450-4275-8621-8918662d4a7a)
 
 ### Tabela Reservas
 ![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/c5889e89-2f2b-40e3-b80f-b5b2b47c4fb8)
