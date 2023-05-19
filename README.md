@@ -28,5 +28,5 @@ npm run build
 ![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/c5889e89-2f2b-40e3-b80f-b5b2b47c4fb8)
 ### Mapa de ocupação 
 Basicamente a ideia é mostrar as mesas ocupadas em tempo real, como só pode ser cadastradas entre 18h ~ 24h, então só pode ver nesse horário.
-![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/f115367c-f0e7-453e-ad69-bfd44eb526bb)
+![image](https://github.com/matheusstyt/restaurante-digitalizou/assets/96219444/65cfb3a9-3b1f-43f3-9e83-15865b4f6d39)
 
